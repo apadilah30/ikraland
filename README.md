@@ -1,3 +1,23 @@
+## Installation bootstrap steps
+### 1. Clone the Repository
+```sh
+ git clone <repository-url>
+ cd <project-name>
+```
+
+### 2. Install Laravel & NPM Dependencies
+```sh
+ composer install
+ npm install
+```
+
+### 3. And last but not least
+```sh
+  npm run dev
+```
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
