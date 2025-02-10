@@ -7,19 +7,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ $title }}</title>
 
-    {{-- @vite(['resources/css/app.scss', 'resources/js/app.js']) --}}
-    {{-- @vite(['resources/scss/app.scss', 'resources/js/app.js']) --}}
     @vite(['resources/scss/app.scss', 'resources/js/app.js'])
 
 
-
-    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
-    {{-- <link rel="stylesheet" href="{{ asset('css/app.css') }}"> --}}
+    <link rel="stylesheet" href="/style/style.css">
 
 </head>
 
-<body>
+<body class="overflow-y-auto">
     {{ $slot }}
+
+    <x-navbar />
+
+    <script src="js/script.js"></script>
 </body>
 
 </html>

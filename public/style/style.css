@@ -1,0 +1,93 @@
+.shadow-navigation {
+  -webkit-box-shadow: 8px -9px 5px 0px rgb(197, 197, 197);
+  -moz-box-shadow: 8px -9px 5px 0px rgb(197, 197, 197);
+  box-shadow: 8px -9px 5px 0px rgb(197, 197, 197);
+}
+
+#navbar {
+  transition: all 0.3s ease;
+}
+
+.nav-link {
+  /* width: 0; */
+  /* background-color: #fff; */
+  width: fit-content;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #41744C;
+  width: fit-content;
+  transition: background-color 0.3s ease, width 0.3s ease; /* Transisi untuk background-color dan width */
+
+}
+
+.nav-link .change-icon-to-home-white-navigation,
+.nav-link .change-icon-to-flower-white-navigation,
+.nav-link .change-icon-to-history-white-navigation {
+  transition: all 0.3s ease; /* Transisi untuk perubahan ikon */
+}
+
+.nav-link:hover .change-icon-to-home-white-navigation {
+  content: url("../icons/navbar/home-white.svg");
+}
+
+.nav-link:hover .change-icon-to-flower-white-navigation {
+  content: url("../icons/navbar/flower-white.svg");
+}
+
+.nav-link:hover .change-icon-to-history-white-navigation {
+  content: url("../icons/navbar/history-white.svg");
+}
+
+.nav-hidden-text {
+  opacity: 0;
+  visibility: hidden;
+  /* transition: all 0.3s ease; */
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Transisi untuk opacity dan visibility */
+
+}
+
+.nav-link:hover .nav-hidden-text {
+  display: inline !important;
+  opacity: 1;
+  visibility: visible; /* Teks menjadi "visible" */
+
+}
+
+.scanner-icon {
+  background-color: #9BCFA6;
+  border: 10px solid #41744C;
+}
+
+
+#reader {
+  width: 100%;
+  height: 477px;
+  max-width: 500px;
+  aspect-ratio: 1; /* Memastikan rasio 1:1 (persegi) */
+  margin: auto; /* Pusatkan di tengah */
+  border: 1px solid #ccc;
+  /* position: relative; */
+  overflow: hidden;
+}
+
+/* Pesan error */
+#error-scanner {
+  color: red;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.heading-home {
+  color: #444444;
+  font-size: 40px;
+}
+
+/* .icons-heading-home {
+  width: 100%;
+} */
+
+
+/*  */
+
