@@ -7,27 +7,34 @@
 
             <ul class="z-10 d-flex justify-content-between px-0">
                 <li class="list-group-item mx-auto my-auto">
-                    <a href="#"
-                        class="nav-link rounded-pill px-2 py-1 d-flex align-self-center justify-content-center gap-2">
-                        <img src="{{ URL('icons/navbar/home.svg') }}" class="change-icon-to-home-white-navigation"
+                    <a href="/"
+                        class="{{ request()->path() === '/' ? 'navigation-link-active' : 'navigation-link' }} text-decoration-none rounded-pill px-2 py-1 d-flex align-self-center justify-content-center gap-2">
+                        <img src="{{ URL('icons/navbar/home.svg') }}"
+                            class="{{ request()->path() === '/' ? 'change-icon-to-home-white-navigation-active' : 'change-icon-to-home-white-navigation' }}"
                             alt="Icon Home" />
-                        <span class="nav-hidden-text fs-6 fw-bold text-light d-none">Beranda</span>
+
+                        <span
+                            class="{{ request()->path() === '/' ? 'navigation-hidden-text-active' : 'navigation-hidden-text d-none' }} fs-6 fw-bold text-light">Beranda</span>
                     </a>
                 </li>
                 <li class="list-group-item mx-auto">
-                    <a href="#"
-                        class="nav-link rounded-pill px-2 py-1 d-flex align-self-center justify-content-center gap-2">
-                        <img src="{{ URL('icons/navbar/flower.svg') }}" class="change-icon-to-flower-white-navigation"
+                    <a href="/flower"
+                        class="{{ request()->path() === 'flower' ? 'navigation-link-active' : 'navigation-link' }} text-decoration-none rounded-pill px-2 py-1 d-flex align-self-center justify-content-center gap-2">
+                        <img src="{{ URL('icons/navbar/flower.svg') }}"
+                            class="{{ request()->path() === 'flower' ? 'change-icon-to-flower-white-navigation-active' : 'change-icon-to-flower-white-navigation' }}"
                             alt="Icon Flower" />
-                        <span class="nav-hidden-text fs-6 fw-bold text-light d-none">Tanaman</span>
+                        <span
+                            class="{{ request()->path() === 'flower' ? 'navigation-hidden-text-active' : 'navigation-hidden-text d-none' }} fs-6 fw-bold text-light">Tanaman</span>
                     </a>
                 </li>
                 <li class="list-group-item mx-auto">
-                    <a href="#"
-                        class="nav-link rounded-pill px-2 py-1 d-flex align-self-center justify-content-center gap-2">
-                        <img src="{{ URL('icons/navbar/history.svg') }}" class="change-icon-to-history-white-navigation"
+                    <a href="/history"
+                        class="{{ request()->path() === 'history' ? 'navigation-link-active' : 'navigation-link' }} text-decoration-none rounded-pill px-2 py-1 d-flex align-self-center justify-content-center gap-2">
+                        <img src="{{ URL('icons/navbar/history.svg') }}"
+                            class="{{ request()->path() === 'history' ? 'change-icon-to-history-white-navigation-active' : 'change-icon-to-history-white-navigation' }}"
                             alt="Icon History" />
-                        <span class="nav-hidden-text fs-6 fw-bold text-light d-none">Riwayat</span>
+                        <span
+                            class="{{ request()->path() === 'history' ? 'navigation-hidden-text-active' : 'navigation-hidden-text d-none' }} fs-6 fw-bold text-light">Riwayat</span>
                     </a>
                 </li>
             </ul>

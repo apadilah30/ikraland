@@ -1,3 +1,5 @@
+/* Navbar */
+
 .shadow-navigation {
   -webkit-box-shadow: 8px -9px 5px 0px rgb(197, 197, 197);
   -moz-box-shadow: 8px -9px 5px 0px rgb(197, 197, 197);
@@ -8,52 +10,81 @@
   transition: all 0.3s ease;
 }
 
-.nav-link {
+
+.cust-nav-link {
+  text-decoration: none;
+}
+
+.navigation-link {
   /* width: 0; */
   /* background-color: #fff; */
   width: fit-content;
   transition: all 0.3s ease;
 }
 
-.nav-link:hover {
+.navigation-link:hover {
   background-color: #41744C;
   width: fit-content;
   transition: background-color 0.3s ease, width 0.3s ease; /* Transisi untuk background-color dan width */
-
 }
 
-.nav-link .change-icon-to-home-white-navigation,
-.nav-link .change-icon-to-flower-white-navigation,
-.nav-link .change-icon-to-history-white-navigation {
+.navigation-link-active {
+  background-color: #41744C;
+  width: fit-content;
+}
+
+.navigation-link .change-icon-to-home-white-navigation,
+.navigation-link .change-icon-to-flower-white-navigation,
+.navigation-link .change-icon-to-history-white-navigation {
   transition: all 0.3s ease; /* Transisi untuk perubahan ikon */
 }
 
-.nav-link:hover .change-icon-to-home-white-navigation {
+.change-icon-to-home-white-navigation-active {
+  content: url("../icons/navbar/home-white.svg") !important;
+}
+
+.change-icon-to-flower-white-navigation-active {
+  content: url("../icons/navbar/flower-white.svg") !important;
+}
+
+.change-icon-to-history-white-navigation-active {
+  content: url("../icons/navbar/history-white.svg") !important;
+}
+
+.navigation-link:hover .change-icon-to-home-white-navigation {
   content: url("../icons/navbar/home-white.svg");
 }
 
-.nav-link:hover .change-icon-to-flower-white-navigation {
+.navigation-link:hover .change-icon-to-flower-white-navigation {
   content: url("../icons/navbar/flower-white.svg");
 }
 
-.nav-link:hover .change-icon-to-history-white-navigation {
+.navigation-link:hover .change-icon-to-history-white-navigation {
   content: url("../icons/navbar/history-white.svg");
 }
 
-.nav-hidden-text {
+.navigaton-hidden-text {
   opacity: 0;
   visibility: hidden;
-  /* transition: all 0.3s ease; */
-  transition: opacity 0.3s ease, visibility 0.3s ease; /* Transisi untuk opacity dan visibility */
-
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-.nav-link:hover .nav-hidden-text {
+
+.navigation-hidden-text-active {
+  display: inline !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.navigation-link:hover .navigation-hidden-text {
   display: inline !important;
   opacity: 1;
-  visibility: visible; /* Teks menjadi "visible" */
-
+  visibility: visible;
 }
+
+
+
+/* Home */
 
 .scanner-icon {
   background-color: #9BCFA6;
@@ -89,5 +120,28 @@
 } */
 
 
-/*  */
 
+
+/* Flower List */
+
+/* .search-box-icon {
+  
+} */
+
+.search-input {
+  background-color: #EBEBEB !important;
+  color: #959595 !important;
+}
+
+.search-input::placeholder {
+  color: #959595 !important;
+}
+
+.card {
+  box-shadow: rgba(104, 104, 105, 0.2) 0px 7px 29px 0px;
+}
+
+.card-list-size {
+  /* width: 18rem; */
+  height: 10rem;
+}

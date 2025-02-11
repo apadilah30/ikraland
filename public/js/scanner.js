@@ -49,8 +49,6 @@ function flipCamera() {
 
     }
 
-    // console.log(cameras);
-
   }).catch(err => {
     console.err(`Error accessing cameras:`, err);
   })
@@ -69,30 +67,31 @@ function scanImage(file) {
 }
 
 
-document.getElementById('flip-camera-btn').addEventListener('click', flipCamera);
+document.getElementById("access-camera-btn")
+  ?.addEventListener("click", () => {
+    Html5Qrcode.getCameras().then(cameras => {
+      if (cameras && cameras.length > 0) {
+        currentCameraId = cameras[0].id;
+        startScanner(currentCameraId);
+      } else {
+        document.getElementById('error-scanner').innerText = "No cameras found.";
+        console.error("No cameras found.");
+      }
+    }).catch(err => {
+      document.getElementById('error-scanner').innerText = "Error accessing cameras. Please allow camera permissions.";
+      console.error("Error accessing cameras:", err);
+    });
+  });
 
-document.getElementById('select-image-btn').addEventListener('click', () => {
+document.getElementById('flip-camera-btn')?.addEventListener('click', flipCamera);
+
+document.getElementById('select-image-btn')?.addEventListener('click', () => {
   document.getElementById('file-input-scanner').click();
 });
 
-document.getElementById('file-input-scanner').addEventListener('change', (event) => {
+document.getElementById('file-input-scanner')?.addEventListener('change', (event) => {
   const file = event.target.files[0];
   if (file) {
     scanImage(file);
   }
-});
-
-Html5Qrcode.getCameras().then(cameras => {
-  if (cameras && cameras.length > 0) {
-    currentCameraId = cameras[0].id;
-    startScanner(currentCameraId);
-  } else {
-    document.getElementById('error-scanner').innerText = "No cameras found.";
-    console.error("No cameras found.");
-  }
-}).catch(err => {
-
-  document.getElementById('error-scanner').innerText = "Error accessing cameras. Please allow camera permissions.";
-  console.error("Error accessing cameras:", err);
-
 });
