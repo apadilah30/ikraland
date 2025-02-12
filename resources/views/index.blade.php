@@ -14,10 +14,10 @@
             <div class="mt-3 col-4">
                 <div class="d-flex justify-content-end gap-2">
                     <a href="#" class="d-block">
-                        <img src="{{ URL('icons/navbar/bell.svg') }}" class="w-100" alt="bell" />
+                        <img src="{{ URL('icons/bell.svg') }}" class="w-100" alt="bell" />
                     </a>
                     <a href="#" class="d-block">
-                        <img src="{{ URL('icons/navbar/heart.svg') }}" class="w-100" alt="heart" />
+                        <img src="{{ URL('icons/heart.svg') }}" class="w-100" alt="heart" />
                     </a>
 
                 </div>
@@ -42,18 +42,18 @@
 
                     <input type="file" id="file-input-scanner" class="d-none" accept="image/*" />
                     <button id="select-image-btn" class="btn">
-                        <img src="{{ URL('icons/navbar/select-image.svg') }}" alt="select-image-icon">
+                        <img src="{{ URL('icons/select-image.svg') }}" alt="select-image-icon">
                     </button>
 
 
                     <div class="scanner-icon rounded-circle py-2 px-1">
                         <button class="btn" id="access-camera-btn">
-                            <img src="{{ URL('icons/navbar/scanner.svg') }}" alt="scanner-icon">
+                            <img src="{{ URL('icons/scanner.svg') }}" alt="scanner-icon">
                         </button>
                     </div>
 
                     <button id="flip-camera-btn" class="btn">
-                        <img src="{{ URL('icons/navbar/change-camera.svg') }}" alt="change-camera-icon">
+                        <img src="{{ URL('icons/change-camera.svg') }}" alt="change-camera-icon">
                     </button>
                 </div>
             </div>

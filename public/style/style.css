@@ -145,3 +145,19 @@
   /* width: 18rem; */
   height: 10rem;
 }
+
+
+/* Hitory */
+
+/* .history-list {
+  height: 400px;
+} */
+
+.card-history-style{
+  /* background-color: #E7E7E7 !important; */
+}
+
+.card-history-size {
+  width: 120px !important;
+  height: 12vh !important;
+}
