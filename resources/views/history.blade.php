@@ -4,7 +4,7 @@
 
     <section class="container mb-5 pb-5">
 
-        <x-heading-layout headingTitle="Riwayat" />
+        <x-back headingTitle="Riwayat" linkTo="/" />
 
         <div class="row mt-5 mb-5 overflow-y-auto history-list">
 

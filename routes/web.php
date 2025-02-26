@@ -20,3 +20,11 @@ Route::get('/flower', function () {
 Route::get('/history', function () {
     return view('history');
 });
+
+Route::get('/favorite', function () {
+    return view('favorit');
+});
+
+Route::get('/detail', function () {
+    return view('detail');
+});

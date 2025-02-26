@@ -1,5 +1,4 @@
-<section id="navbar" class="container">
-
+<section id="navbar" class="container z-1">
 
     <div class="row border-top mt-5 py-4 rounded-5 rounded-bottom-0 shadow-navigation bg-light fixed-bottom">
 

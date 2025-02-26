@@ -6,18 +6,14 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class HeadingLayout extends Component
+class ScanNavbar extends Component
 {
     /**
      * Create a new component instance.
      */
-
-    public $headingTitle;
-
-    public function __construct(
-        $headingTitle
-    ) {
-        $this->headingTitle = $headingTitle;
+    public function __construct()
+    {
+        //
     }
 
     /**
@@ -25,6 +21,6 @@ class HeadingLayout extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.heading-layout');
+        return view('components.scan-navbar');
     }
 }

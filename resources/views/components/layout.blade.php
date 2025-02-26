@@ -15,9 +15,14 @@
 </head>
 
 <body class="overflow-y-auto">
-    {{ $slot }}
 
-    <x-navbar />
+    <section class="{{ in_array(request()->route()->uri(), ['history', 'favorite']) ? 'py-5' : '' }}">
+        {{ $slot }}
+    </section>
+
+    @if (!in_array(request()->route()->uri(), ['detail']))
+        <x-navbar />
+    @endif
 
     <script src="js/script.js"></script>
 </body>
