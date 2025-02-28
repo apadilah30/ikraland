@@ -19,7 +19,19 @@ if (window.location.pathname == '/') {
     headingBack.classList.toggle('d-block');
   }
   
-  
-  
 });
+}
+
+if (window.location.pathname == '/detail') {
+  const detailImg = document.getElementById('detail-img');
+
+  console.log(detailImg.getElementsByTagName('img')[0]);
+
+  detailImg.addEventListener('click', () => {
+    detailImg.getElementsByTagName('img')[0].classList.toggle('position-absolute');
+    detailImg.getElementsByTagName('img')[0].classList.toggle('position-fixed');
+    detailImg.classList.toggle('z-0');
+    detailImg.classList.toggle('z-3');
+  }); 
+  
 }

@@ -3,12 +3,12 @@
   <x-slot:title>Detail</x-slot:title>
 
 
-  <x-back />
+  <x-back linkTo="/"/>
 
   <section class="container px-0 overflow-x-hidden">
 
     <div class="row justify-content-center px-0 position-relative">
-      <div class="col-12 px-0 z-0 height-image">
+      <div id="detail-img" class="col-12 px-0 z-0 height-image">
         <img src="{{ URL('images/tanaman-1.png') }}" alt="..." class="img-fluid position-absolute top-0 start-0 w-100 h-100 object-fit-cover" />
       </div>
 
