@@ -120,8 +120,6 @@
 } */
 
 
-
-
 /* Flower List */
 
 /* .search-box-icon {
@@ -177,4 +175,20 @@
 
 .height-image{
   height: 80vh;
+}
+
+.unzoom-image {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.zoom-image {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
 }

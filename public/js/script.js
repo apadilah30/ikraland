@@ -24,14 +24,23 @@ if (window.location.pathname == '/') {
 
 if (window.location.pathname == '/detail') {
   const detailImg = document.getElementById('detail-img');
+  const headingBack = document.getElementById('heading-back');
+
+  console.log('Test')
 
   console.log(detailImg.getElementsByTagName('img')[0]);
 
   detailImg.addEventListener('click', () => {
-    detailImg.getElementsByTagName('img')[0].classList.toggle('position-absolute');
-    detailImg.getElementsByTagName('img')[0].classList.toggle('position-fixed');
+
+    detailImg.getElementsByTagName('img')[0].classList.toggle('zoom-image');
+    detailImg.getElementsByTagName('img')[0].classList.toggle('unzoom-image');
     detailImg.classList.toggle('z-0');
     detailImg.classList.toggle('z-3');
+    headingBack.classList.toggle('d-none');
+
+
+    // detailImg.getElementsByTagName('img')[0].classList.toggle('position-absolute');
+    // detailImg.getElementsByTagName('img')[0].classList.toggle('position-relative');
   }); 
   
 }

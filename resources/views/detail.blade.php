@@ -9,7 +9,7 @@
 
     <div class="row justify-content-center px-0 position-relative">
       <div id="detail-img" class="col-12 px-0 z-0 height-image">
-        <img src="{{ URL('images/tanaman-1.png') }}" alt="..." class="img-fluid position-absolute top-0 start-0 w-100 h-100 object-fit-cover" />
+        <img src="{{ URL('images/tanaman-1.png') }}" alt="..." class="img-fluid unzoom-image object-fit-cover" />
       </div>
 
       <div class="col-12 z-1 bg-white-cust pt-3 px-4 mx-2 border rounded-5 rounded-bottom-0">
