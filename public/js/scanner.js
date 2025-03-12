@@ -6,6 +6,9 @@ let html5QrCode = new Html5Qrcode('reader');
 let isScannerPaused = false;
 
 const textScanner = document.getElementById('error-scanner');
+const scanNav = document.getElementById('scan-navbar');
+const navbar = document.getElementById('navbar');
+const headingBack = document.getElementById('heading-back');
 
 textScanner.innerText = "Klik scan di bawah!";
 
@@ -184,23 +187,21 @@ function valueScanNav(img, detail, link, toggleNav) {
 function toggleNav() {
   if (window.location.pathname == '/') {
 
-    const scanNav = document.getElementById('scan-navbar');
-    const navbar = document.getElementById('navbar');
-    const headingBack = document.getElementById('heading-back');
+
     headingBack.classList.add('d-none');
 
     scanNav.classList.toggle('d-none');
     navbar.classList.toggle('d-none');
     headingBack.classList.toggle('d-none');
 
-
-    headingBack.getElementsByTagName('a')[0].addEventListener('click', () => {
-      scanNav.classList.toggle('d-none');
-      navbar.classList.toggle('d-none');
-      headingBack.classList.toggle('d-none');
-    })
-
   }
 }
+
+
+headingBack.getElementsByTagName('a')[0].addEventListener('click', (e) => {
+  scanNav.classList.toggle('d-none');
+  navbar.classList.toggle('d-none');
+  headingBack.classList.toggle('d-none');
+})
 
 
