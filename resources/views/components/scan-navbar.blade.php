@@ -4,15 +4,15 @@
 
         <div class="col-5">
             <div class="w-100">
-                <img src="{{ URL('/images/tanaman-1.png') }}" class="img-width-scan rounded-2" alt="..." />
+                <img id="scan-nav-img" src="{{ URL('/images/tanaman-1.png') }}" class="img-width-scan rounded-2" alt="..." />
             </div>
         </div>
         <div class="col-7">
             <div>
-                <p>
+                <p id="scan-nav-detail">
                     Lorem ipsum dolor sit amet consectetur. Sem pretium turpis quis ut condimentum odio nisl orci. Tempor enim maecenas hac potenti.....
                 </p>
-                <a class="btn btn-success rounded-4" href="#">
+                <a id="scan-nav-link" class="btn btn-success rounded-4" href="#">
                     Detail &rarr;
                 </a>
             </div>

@@ -18,4 +18,10 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    server: {
+        host: '192.168.1.10',
+        port: 5173,
+        strictPort: true,
+        cors: true
+    },
 });

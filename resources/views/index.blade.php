@@ -40,12 +40,6 @@
 
             <section class="row mb-5">
 
-                <div class="col-12 mt-5 d-flex justify-content-center">
-                    <button id="change-style" class="btn btn-primary">
-                        Change Style
-                    </button>
-                </div>
-
                 <div class="col-12 mb-5">
                     <div class="my-5 d-flex justify-content-center gap-4">
 
