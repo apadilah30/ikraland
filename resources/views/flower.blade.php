@@ -9,7 +9,7 @@
             <div class="col-12">
 
                 <form class="d-flex justify-content-between gap-2" role="search">
-                    <div class="search-input d-flex rounded-4">
+                    <div class="search-input d-flex rounded-4 w-100">
                         <div class="position-relative px-4 overflow-hidden search-box-icon rounded-start-0">
                             <svg width="23" height="23" class="position-absolute top-50 start-50 translate-middle" viewBox="0 0 23 23" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -30,7 +30,7 @@
 
         {{-- List Flower --}}
         <section class="row mt-4 mb-5 px-1 h-100">
-            <div class="col-6">
+            <div class="col-6 col-md-4 col-lg-3">
                 <div class="card mt-3 border-top-0 rounded-top-4 rounded-bottom-3 border-0">
                     <img src="{{ URL('/images/tanaman-1.png') }}"
                         class="card-img-top rounded-4 card-list-size object-fit-cover" alt="...">
@@ -39,7 +39,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-6 col-md-4 col-lg-3">
                 <div class="card mt-3 border-top-0 rounded-top-4 rounded-bottom-3 border-0">
                     <img src="{{ URL('/images/tanaman-2.jpg') }}"
                         class="card-img-top rounded-4 card-list-size object-fit-cover" alt="...">
@@ -48,7 +48,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-6 col-md-4 col-lg-3">
                 <div class="card mt-3 border-top-0 rounded-top-4 rounded-bottom-3 border-0">
                     <img src="{{ URL('/images/tanaman-3.jpeg') }}"
                         class="card-img-top rounded-4 card-list-size object-fit-cover" alt="...">
@@ -57,7 +57,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-6 col-md-4 col-lg-3">
                 <div class="card mt-3 border-top-0 rounded-top-4 rounded-bottom-3 border-0">
                     <img src="{{ URL('/images/tanaman-4.jpg') }}"
                         class="card-img-top rounded-4 card-list-size object-fit-cover" alt="...">
@@ -66,7 +66,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-6 col-md-4 col-lg-3">
                 <div class="card mt-3 border-top-0 rounded-top-4 rounded-bottom-3 border-0">
                     <img src="{{ URL('/images/tanaman-4.jpg') }}"
                         class="card-img-top rounded-4 card-list-size object-fit-cover" alt="...">
