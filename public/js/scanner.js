@@ -50,12 +50,12 @@ function onScanFailure(error) {
 
 function startScanner(cameraId) {
 
-  const width = window.innerWidth;
-  const height = (window.innerHeight / 2) + width;
+  const width = window.innerWidth / 2;
+  const height = width / 2;
 
   html5QrCode.start(
     cameraId,
-    { fps: 10, qrbox: { width: width, height: height } },
+    { fps: 10, qrbox: { width, height } },
     onScanSuccess,
     onScanFailure
   ).then(() => {
