@@ -8,13 +8,13 @@
 
         <div class="row mt-5 mb-5 overflow-y-auto history-list">
 
-            <div class="col-12">
+            <div class="col-12 col-lg-6">
                 <div class="card mb-3 card-history-style">
                     <div class="row d-flex align-items-center">
-                        <div class="col-4">
+                        <div class="col-4 col-md-5">
                             <img src="{{ URL('/images/tanaman-1.png') }}" class="img-fluid rounded-2 my-2 ms-2 object-fit-cover card-history-size" alt="...">
                         </div>
-                        <div class="col-8">
+                        <div class="col-8 col-md-7">
                             <div class="card-body">
                                 <h5 class="card-title">
                                     Hanjuang
@@ -28,13 +28,13 @@
                 </div>
             </div>
 
-            <div class="col-12">
+            <div class="col-12 col-lg-6">
                 <div class="card mb-3 card-history-style">
                     <div class="row d-flex align-items-center">
-                        <div class="col-4">
+                        <div class="col-4 col-md-5">
                             <img src="{{ URL('/images/tanaman-2.jpg') }}" class="img-fluid rounded-2 my-2 ms-2 object-fit-cover card-history-size" alt="...">
                         </div>
-                        <div class="col-8">
+                        <div class="col-8 col-md-7">
                             <div class="card-body">
                                 <h5 class="card-title">
                                     Hanjuang
@@ -48,13 +48,13 @@
                 </div>
             </div>
 
-            <div class="col-12">
+            <div class="col-12 col-lg-6">
                 <div class="card mb-3 card-history-style">
                     <div class="row d-flex align-items-center">
-                        <div class="col-4">
+                        <div class="col-4 col-md-5">
                             <img src="{{ URL('/images/tanaman-3.jpeg') }}" class="img-fluid rounded-2 my-2 ms-2 object-fit-cover card-history-size" alt="...">
                         </div>
-                        <div class="col-8">
+                        <div class="col-8 col-md-7">
                             <div class="card-body">
                                 <h5 class="card-title">
                                     Hanjuang
@@ -68,13 +68,13 @@
                 </div>
             </div>
 
-            <div class="col-12">
+            <div class="col-12 col-lg-6">
                 <div class="card mb-3 card-history-style">
                     <div class="row d-flex align-items-center">
-                        <div class="col-4">
+                        <div class="col-4 col-md-5">
                             <img src="{{ URL('/images/tanaman-4.jpg') }}" class="img-fluid rounded-2 my-2 ms-2 object-fit-cover card-history-size" alt="...">
                         </div>
-                        <div class="col-8">
+                        <div class="col-8 col-md-7">
                             <div class="card-body">
                                 <h5 class="card-title">
                                     Hanjuang

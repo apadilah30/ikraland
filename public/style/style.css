@@ -224,6 +224,13 @@
     width: 3em !important;
   }
 
+  /* history */
+  .card-history-size {
+    width: 240px !important;
+    height: 12vh !important;
+  }
+
+
 }
 
 /* lg */
