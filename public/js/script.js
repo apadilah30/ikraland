@@ -26,3 +26,7 @@ if (window.location.pathname == '/detail') {
   });
 
 }
+
+
+// console.log(window.innerHeight)
+// document.getElementById('navbar').style.marginTop = (window.innerHeight / 4) + 'px';

@@ -6,15 +6,15 @@
 
         <section class="container overflow-y-auto">
             
-            <section class="row mx-2 mb-3 mt-3">
+            <section class="row mx-2 mb-3 mt-3 mb-md-5 mt-md-5 align-items-lg-center">
                 <div class="col-8">
                     <h2 class="fw-bold heading-home">
                         Mari temukan tanaman!
                     </h2>
                 </div>
 
-                <div class="mt-3 col-4">
-                    <div class="d-flex justify-content-end gap-2">
+                <div class="mt-3 col-4 home-icons">
+                    <div class="d-flex justify-content-end gap-2 gap-md-4">
                         <a href="#" class="d-block">
                             <img src="{{ URL('icons/bell.svg') }}" class="w-100" alt="bell" />
                         </a>
@@ -27,21 +27,21 @@
                 
             </section>
 
-            <section class="row">
+            <section class="row my-md-4">
                 <div class="col-12">
                     <div id="scanner" class="d-flex justify-content-center mx-3">
                         <div id="reader"
-                            class="w-100 border rounded-4 mx-auto d-flex align-items-center justify-content-center">
+                            class="border rounded-4 mx-auto mx-md-0 d-flex align-items-center justify-content-center">
                             <div id="error-scanner"></div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section class="row mb-5">
+            <section id="controller-app" class="row mb-5">
 
                 <div class="col-12 mb-5">
-                    <div class="my-5 d-flex justify-content-center gap-4">
+                    <div class="my-5 d-flex justify-content-center gap-4 gap-md-5">
 
                         <input type="file" id="file-input-scanner" class="d-none" accept="image/*" />
                         <button id="select-image-btn" class="btn">

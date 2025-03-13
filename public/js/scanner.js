@@ -50,8 +50,8 @@ function onScanFailure(error) {
 
 function startScanner(cameraId) {
 
-  const height = window.innerHeight / 2;
   const width = window.innerWidth;
+  const height = (window.innerHeight / 2) + width;
 
   html5QrCode.start(
     cameraId,
@@ -186,14 +186,11 @@ function valueScanNav(img, detail, link, toggleNav) {
 
 function toggleNav() {
   if (window.location.pathname == '/') {
-
-
     headingBack.classList.add('d-none');
 
     scanNav.classList.toggle('d-none');
     navbar.classList.toggle('d-none');
     headingBack.classList.toggle('d-none');
-
   }
 }
 
