@@ -31,49 +31,49 @@
         {{-- List Flower --}}
         <section class="row mt-4 mb-5 px-1 h-100">
             <div class="col-6 col-md-4 col-lg-3">
-                <div class="card mt-3 border-top-0 rounded-top-4 rounded-bottom-3 border-0">
+                <a href="/detail" class="card mt-3 border-top-0 rounded-top-4 rounded-bottom-3 border-0">
                     <img src="{{ URL('/images/tanaman-1.png') }}"
                         class="card-img-top rounded-4 card-list-size object-fit-cover" alt="...">
                     <div class="card-body text-center py-4">
                         <p class="card-text fw-bolder fs-6">Sri Rejeki</p>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col-6 col-md-4 col-lg-3">
-                <div class="card mt-3 border-top-0 rounded-top-4 rounded-bottom-3 border-0">
+                <a href="/detail" class="card mt-3 border-top-0 rounded-top-4 rounded-bottom-3 border-0">
                     <img src="{{ URL('/images/tanaman-2.jpg') }}"
                         class="card-img-top rounded-4 card-list-size object-fit-cover" alt="...">
                     <div class="card-body text-center py-4">
                         <p class="card-text fw-bolder fs-6">Sri Rejeki</p>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col-6 col-md-4 col-lg-3">
-                <div class="card mt-3 border-top-0 rounded-top-4 rounded-bottom-3 border-0">
+                <a href="/detail" class="card mt-3 border-top-0 rounded-top-4 rounded-bottom-3 border-0">
                     <img src="{{ URL('/images/tanaman-3.jpeg') }}"
                         class="card-img-top rounded-4 card-list-size object-fit-cover" alt="...">
                     <div class="card-body text-center py-4">
                         <p class="card-text fw-bolder fs-6">Sri Rejeki</p>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col-6 col-md-4 col-lg-3">
-                <div class="card mt-3 border-top-0 rounded-top-4 rounded-bottom-3 border-0">
+                <a href="/detail" class="card mt-3 border-top-0 rounded-top-4 rounded-bottom-3 border-0">
                     <img src="{{ URL('/images/tanaman-4.jpg') }}"
                         class="card-img-top rounded-4 card-list-size object-fit-cover" alt="...">
                     <div class="card-body text-center py-4">
                         <p class="card-text fw-bolder fs-6">Sri Rejeki</p>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col-6 col-md-4 col-lg-3">
-                <div class="card mt-3 border-top-0 rounded-top-4 rounded-bottom-3 border-0">
+                <a href="/detail" class="card mt-3 border-top-0 rounded-top-4 rounded-bottom-3 border-0">
                     <img src="{{ URL('/images/tanaman-4.jpg') }}"
                         class="card-img-top rounded-4 card-list-size object-fit-cover" alt="...">
                     <div class="card-body text-center py-4">
                         <p class="card-text fw-bolder fs-6">Sri Rejeki</p>
                     </div>
-                </div>
+                </a>
             </div>
         </section>
     </section>
