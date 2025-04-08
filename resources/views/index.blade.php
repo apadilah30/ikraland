@@ -29,11 +29,11 @@
 
             <section class="row my-md-4">
                 <div class="col-12">
-                    <div id="scanner" class="d-flex justify-content-center mx-3">
+                    <div id="scanner" class="d-flex justify-content-center mx-3 position-relative">
                         <div id="reader"
                             class="border rounded-4 mx-auto mx-md-0 d-flex align-items-center justify-content-center">
-                            <div id="error-scanner"></div>
                         </div>
+                        <div id="error-scanner" class="position-absolute top-50 end-25 z-1"></div>
                     </div>
                 </div>
             </section>

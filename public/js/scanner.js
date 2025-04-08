@@ -4,11 +4,19 @@ import { Html5QrcodeScanner, Html5Qrcode, Html5QrcodeSupportedFormats } from "ht
 let currentCameraId = null;
 let html5QrCode = new Html5Qrcode('reader');
 let isScannerPaused = false;
+let countingCamera = 0;
 
 const textScanner = document.getElementById('error-scanner');
 const scanNav = document.getElementById('scan-navbar');
 const navbar = document.getElementById('navbar');
 const headingBack = document.getElementById('heading-back');
+const reader = document.getElementById('reader');
+
+if (html5QrCode.isScanning) {
+  reader.classList.toggle('z-3');
+} else {
+  reader.classList.toggle('z-3');
+}
 
 textScanner.innerText = "Klik scan di bawah!";
 
@@ -49,19 +57,20 @@ function onScanFailure(error) {
 
 
 function startScanner(cameraId) {
+  const width = window.innerWidth;
+  const height = window.innerHeight;
 
-  const width = window.innerWidth / 2;
-  const height = width / 2;
+  const size = Math.floor(Math.min(width, height) * 0.7);
 
   html5QrCode.start(
     cameraId,
-    { fps: 10, qrbox: { width, height } },
+    { fps: 10, qrbox: { width: size, height: size } },
     onScanSuccess,
     onScanFailure
   ).then(() => {
     isScannerPaused = false;
   }).catch(err => {
-    document.getElementById('error-scanner').innerText = "Error accessing cemera. Please allow camera permissions.";
+    textScanner.innerText = "Something went wrong.";
     console.error("Error starting scanner:", err);
   });
 
@@ -69,29 +78,38 @@ function startScanner(cameraId) {
 
 async function flipCamera() {
 
+  if (html5QrCode.isScanning) {
+    await html5QrCode.stop();
+  }
+
   try {
+
     const cameras = await Html5Qrcode.getCameras();
+
 
     if (cameras && cameras.length > 1) {
 
-      const newCameraId = cameras.find(cameras => cameras.id !== currentCameraId).id;
+
+      if ((cameras.length - 1) <= countingCamera) {
+        countingCamera = 0;
+      } else {
+        countingCamera += 1;
+      }
+
+      const newCameraId = cameras[countingCamera].id;
 
       currentCameraId = newCameraId;
 
-      html5QrCode.stop().then(() => {
-
+      setTimeout(() => {
         startScanner(newCameraId);
-
-      }).catch(err => {
-        console.error("Error stopping scanner:", err);
-      });
+      }, 300);
 
     } else {
       console.warn("No alternate camera found");
 
     }
 
-  } catch (error) {
+  } catch (err) {
     console.error(`Error accessing cameras:`, err);
   }
 }
@@ -126,12 +144,12 @@ document.getElementById("access-camera-btn")
           currentCameraId = cameras[0].id;
           startScanner(currentCameraId);
         } else {
-          document.getElementById('error-scanner').innerText = "No cameras found.";
+          textScanner.innerText = "No cameras found.";
           console.error("No cameras found.");
         }
       }
     }).catch(err => {
-      document.getElementById('error-scanner').innerText = "Error accessing cameras. Please allow camera permissions.";
+      textScanner.innerText = "Error accessing cameras. Please allow camera permissions.";
       console.error("Error accessing cameras:", err);
     });
   });
