@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ $title }}</title>
+    <title>Flower App | {{ $title }}</title>
 
     @vite(['resources/scss/app.scss', 'resources/js/app.js'])
 
@@ -15,10 +15,15 @@
 </head>
 
 <body class="overflow-y-auto">
-    {{ $slot }}
 
-    <x-navbar />
-    
+    <section class="{{ in_array(request()->route()->uri(), ['history', 'favorite']) ? 'py-5' : '' }}">
+        {{ $slot }}
+    </section>
+
+    @if (!in_array(request()->route()->uri(), ['detail']))
+        <x-navbar />
+    @endif
+
     <script src="js/script.js"></script>
     @stack('scripts')
 </body>

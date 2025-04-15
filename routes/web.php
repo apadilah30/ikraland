@@ -13,7 +13,7 @@ use App\Http\Controllers\UserController;
 //     return view('welcome');
 // });
 
-Route::get('/test', fn() => view('test'));
+// Route::get('/test', fn() => view('test'));
 
 Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('login');
 Route::post('/login', [AuthenticatedSessionController::class, 'store']);
@@ -86,3 +86,18 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::get('/show-plant/{slug}', [PlantController::class, 'show'])->name('show-plant');
+Route::get('/flower', function () {
+    return view('flower');
+});
+
+Route::get('/history', function () {
+    return view('history');
+});
+
+Route::get('/favorite', function () {
+    return view('favorit');
+});
+
+Route::get('/detail', function () {
+    return view('detail');
+});

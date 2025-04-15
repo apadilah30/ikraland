@@ -6,3 +6,5 @@ import * as bootstrap from 'bootstrap';
 
 
 import '../../public/js/scanner';
+
+// import './scanner';
