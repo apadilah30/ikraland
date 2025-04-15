@@ -18,8 +18,9 @@
     {{ $slot }}
 
     <x-navbar />
-
+    
     <script src="js/script.js"></script>
+    @stack('scripts')
 </body>
 
 </html>
