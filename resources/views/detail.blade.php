@@ -13,18 +13,18 @@
       </div>
 
       <div class="col-12 z-1 bg-white-cust pt-3 px-4 border rounded-5 rounded-bottom-0">
-        <div class="d-flex align-items-center justify-content-between gap-5 mb-4 pt-4">
+        <div class="d-flex align-items-center justify-content-between gap-5 mb-4">
           
-          <h1 class="fw-bold fs-1">
+          <h1 class="fw-bold fs-1 mb-0">
             Sri Rejeki
           </h1>
-          <div class="d-flex">
-            <button class="btn">
-              <img src="{{ URL('icons/sound-green.svg') }}" alt="..." />
-            </button>
-            <button class="btn">
+          <div class="d-flex align-items-center gap-4">
+            <div>
+              <img src="{{ URL('icons/sound-green-muted.svg') }}"  alt="..." />
+            </div>
+            <div>
               <img src="{{ URL('icons/love-green.svg') }}" alt="..." />
-            </button>
+            </div>
           </div>
 
         </div>
