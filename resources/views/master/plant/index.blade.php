@@ -91,7 +91,7 @@
                                                 download="QR-{{ $plant->slug }}.png">
                                                 <i class="fa fa-download"></i> QR
                                             </a>
-                                            <a href="{{ route('show-plant', $plant) }}"
+                                            <a href="{{ route('show-plant', $plant->slug) }}"
                                                 class="btn btn-sm btn-info text-white" target="__blank">Preview</a>
                                             <a href="{{ route('plant.edit', $plant) }}"
                                                 class="btn btn-sm btn-warning">Edit</a>

@@ -6,14 +6,14 @@
 
         <section class="container overflow-y-auto">
             
-            <section class="row mx-2 mb-3 mt-3 mb-md-5 mt-md-5 align-items-lg-center">
+            <section class="row mx-2 mb-3 mt-3 mb-md-5 mt-md-5 align-items-lg-top">
                 <div class="col-8">
-                    <h2 class="fw-bold heading-home">
+                    <h4 class="fw-bold heading-home">
                         Mari temukan tanaman!
-                    </h2>
+                    </h4>
                 </div>
 
-                <div class="mt-3 col-4 home-icons">
+                <div class="mt-2 col-4 home-icons">
                     <div class="d-flex justify-content-end gap-2 gap-md-4">
                         <a href="#" class="d-block">
                             <img src="{{ URL('icons/bell.svg') }}" class="w-100" alt="bell" />

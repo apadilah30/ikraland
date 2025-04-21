@@ -225,7 +225,7 @@ class PlantController extends Controller
 
         // generate QR code for every plant
         $data->map(function ($item) {
-            $item->qr_code = base64_encode(QrCode::format('png')->size(200)->generate(route('show-plant', $item->id)));
+            $item->qr_code = base64_encode(QrCode::format('png')->size(200)->generate($item->slug));
             return $item;
         });
 
@@ -244,7 +244,7 @@ class PlantController extends Controller
         $data = Plant::with('category')->findOrFail($id);
         $qr_code = QrCode::format('png')
             ->size(1000)
-            ->generate(route('show-plant', $data->id));
+            ->generate($data->slug);
 
         return response($qr_code)->header('Content-Type', 'image/png');
     }

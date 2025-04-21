@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Scans;
 use Illuminate\Http\Request;
 
 class ScanController extends Controller
@@ -11,7 +12,14 @@ class ScanController extends Controller
      */
     public function index()
     {
-        //
+        $data = Scans::query()
+            ->with('plant')
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
+
+        return view('master.scan-history.index', [
+            'datas' => $data,
+        ]);
     }
 
     /**

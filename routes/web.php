@@ -5,8 +5,10 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\NewPasswordController;
+use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\PlantCategoryController;
 use App\Http\Controllers\PlantController;
+use App\Http\Controllers\ScanController;
 use App\Http\Controllers\UserController;
 
 // Route::get('/', function () {
@@ -29,7 +31,7 @@ Route::post('/reset-password', [NewPasswordController::class, 'store'])->name('p
 
 Route::get('/', function () {
     return view(view: 'index');
-});
+})->name('home');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', function () {
@@ -67,11 +69,8 @@ Route::group(['middleware' => 'auth'], function () {
 
 
     Route::prefix('scan-history')->group(function () {
-        Route::get('/', [PlantController::class, 'index'])->name('scan-history');
-        Route::get('/create', [PlantController::class, 'create'])->name('scan-history.create');
-        Route::post('/', [PlantController::class, 'store'])->name('scan-history.store');
-        Route::get('/{id}', [PlantController::class, 'show'])->name('scan-history.show');
-        Route::put('/{id}', [PlantController::class, 'edit'])->name('scan-history.edit');
+        Route::get('/', [ScanController::class, 'index'])->name('scan-history');
+        Route::get('/{id}', [ScanController::class, 'show'])->name('scan-history.show');
     });
 
     
@@ -85,10 +84,8 @@ Route::group(['middleware' => 'auth'], function () {
     });
 });
 
-Route::get('/show-plant/{slug}', [PlantController::class, 'show'])->name('show-plant');
-Route::get('/flower', function () {
-    return view('flower');
-});
+Route::get('/show-plant/{slug}', [GeneralController::class, 'getFlowerDetail'])->name('show-plant');
+Route::get('/flower', [GeneralController::class, 'getFlowers'])->name('flower');
 
 Route::get('/history', function () {
     return view('history');
@@ -98,6 +95,6 @@ Route::get('/favorite', function () {
     return view('favorit');
 });
 
-Route::get('/detail', function () {
-    return view('detail');
-});
+// Route::get('/detail', function () {
+//     return view('detail');
+// });
