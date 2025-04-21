@@ -11,6 +11,8 @@ const scanNav = document.getElementById('scan-navbar');
 const navbar = document.getElementById('navbar');
 const headingBack = document.getElementById('heading-back');
 const reader = document.getElementById('reader');
+const token = localStorage.getItem('token');
+const scanUrl = "/api/scan";
 
 if (html5QrCode.isScanning) {
   reader.classList.toggle('z-3');
@@ -21,23 +23,9 @@ if (html5QrCode.isScanning) {
 textScanner.innerText = "Klik scan di bawah!";
 
 const rand = (min, max) => Math.floor(Math.random() * (max - min)) + min;
-const response = [
-  {
-    id: 1,
-    description: 'Lorem ipsum dolor sit ametas asdasdasdas ...',
-    slug: '/detail',
-    img: '../images/tanaman-1.png',
-  },
-  {
-    id: 2,
-    description: 'Lorem ipsum dolor sit ametas asdasdasdas ...',
-    slug: '/detail',
-    img: '../images/tanaman-2.jpg',
-  }
-]
 
 function onScanSuccess(decodedText, decodedResult) {
-
+  console.log(decodedText)
   try {
     console.log(`Code matched = ${decodedText}`, decodedResult);
     pauseScanning();
@@ -52,7 +40,8 @@ function onScanSuccess(decodedText, decodedResult) {
 }
 
 function onScanFailure(error) {
-  console.warn(`Code scan error = ${error}`);
+  console.log(error)
+  // console.warn(`Code scan error = ${error}`);
 }
 
 
@@ -62,12 +51,25 @@ function startScanner(cameraId) {
 
   const size = Math.floor(Math.min(width, height) * 0.7);
 
+  console.log(size)
+
   html5QrCode.start(
     cameraId,
-    { fps: 10, qrbox: { width: size, height: size } },
-    onScanSuccess,
-    onScanFailure
+    {
+      fps: 60,
+      qrbox: { width: size, height: size }
+    },
+    // onScanSuccess,
+    // onScanFailure
+    (decodedText, decodedResult) => {
+      console.log(decodedText, decodedResult);
+    },
+    (errorMessage, error) => {
+      console.log(error);
+    }
   ).then(() => {
+    console.log(`Started scanning with camera id ${cameraId}`);
+    textScanner.innerText = "Scanning...";
     isScannerPaused = false;
   }).catch(err => {
     textScanner.innerText = "Something went wrong.";
@@ -114,22 +116,38 @@ async function flipCamera() {
   }
 }
 
-function scanImage(file) {
+async function scanImage(file) {
 
-  html5QrCode.scanFile(file, true)
-    .then(decodedText => {
+  try {
+    const decodedText = await html5QrCode.scanFile(file, true);
+    console.log(`QR Code Found: ${decodedText}`);
 
-      console.log(`QR Code Found: ${decodedText}`);
+    if (decodedText) {
+      const response = await fetch(`${scanUrl}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          plant_id: decodedText,
+          device_id: token
+        }),
+      });
 
-      const results = response[rand(1, 2)];
+      const results = await response.json();
+      const data = results?.data
+      const name = `${data.name}(${data.scientific_name})`
+      const urlDetail = `/show-plant/${data.slug}`
 
-
-      return valueScanNav(results.img, results.description, results.slug, toggleNav);
-    })
-    .catch(err => {
-      console.error(`Error scanning file: ${err}`);
+      return valueScanNav(data.images.length ? data.images[0].image : "/images/tanaman-1.png", name, urlDetail, toggleNav);
+    } else {
+      console.error("No QR Code found in the image.");
       alert("No QR Code found in the image.");
-    });
+    }
+  } catch (err) {
+    console.error(`Error scanning file: ${err}`);
+    alert("No QR Code found in the image.");
+  }
 }
 
 

@@ -1,11 +1,11 @@
-<section id="heading-back" class="container z-2">
+<section id="heading-back" class="container z-2 position-relative">
 
-    <div class="row fixed-top d-flex justify-content-between align-items-center ps-4 py-4 px-2 
-    {{ in_array(request()->route()->uri(), ['detail']) ? '' : 'bg-white-cust' }}">
+    <div
+        class="row btn-back {{ in_array(request()->route()->uri(), ['detail']) ? '' : 'bg-white-cust' }} shadow-sm">
 
         <div class="col-auto">
-            <a href="{{ $linkTo }}" class="text-center btn bg-white-cust opacity-75 rounded-circle ">
-                <img src="{{ URL('/icons/back.svg') }}" alt="icon-back">
+            <a href="{{ $linkTo }}" class="text-center btn bg-white-cust opacity-75 rounded-circle d-flex align-items-center justify-content-center" style="width: 36px; height: 36px">
+                <img src="{{ URL('/icons/back.svg') }}" alt="icon-back" class="mx-auto">
             </a>
         </div>
 

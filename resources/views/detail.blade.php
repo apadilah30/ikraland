@@ -1,44 +1,56 @@
 <x-layout>
 
-  <x-slot:title>Detail</x-slot:title>
+    <x-slot:title>Detail</x-slot:title>
 
 
-  <x-back linkTo="/"/>
+    <section class="mobile-wrapper">
+        <div class="container">
+            <x-back headingTitle="Detail" linkTo="/" />
+            <div class="row justify-content-center px-0 position-relative min-h-screen">
+                <div id="detail-img" class=" height-image">
+                    <img src="{{ URL('images/tanaman-1.png') }}" alt="..."
+                        class="img-fluid unzoom-image object-fit-cover" />
+                </div>
 
-  <section class="container">
+                <div class="col-12 z-1 bg-white-cust pt-3 px-4 border rounded-5 rounded-bottom-0 pb-5">
+                    <div class="d-flex align-items-center justify-content-between gap-5 mb-4 pt-4">
 
-    <div class="row justify-content-center px-0 position-relative">
-      <div id="detail-img" class=" height-image">
-        <img src="{{ URL('images/tanaman-1.png') }}" alt="..." class="img-fluid unzoom-image object-fit-cover" />
-      </div>
+                        <h1 class="fw-bold fs-3 mb-0">
+                            {{ $data->name }}
+                        </h1>
+                        <div class="d-flex align-items-center gap-4">
+                            <div>
+                                <img src="{{ URL('icons/sound-green-muted.svg') }}" alt="..." />
+                            </div>
+                            <div>
+                                <img src="{{ URL('icons/love-green.svg') }}" alt="..." />
+                            </div>
+                        </div>
+                    </div>
 
-      <div class="col-12 z-1 bg-white-cust pt-3 px-4 border rounded-5 rounded-bottom-0">
-        <div class="d-flex align-items-center justify-content-between gap-5 mb-4">
-          
-          <h1 class="fw-bold fs-1 mb-0">
-            Sri Rejeki
-          </h1>
-          <div class="d-flex align-items-center gap-4">
-            <div>
-              <img src="{{ URL('icons/sound-green-muted.svg') }}"  alt="..." />
+                    <div class="mx-1 mb-5 fw-normal text-wrap detail-text fs-6 pb-5">
+                        {!! $data->description !!}
+                    </div>
+                </div>
             </div>
-            <div>
-              <img src="{{ URL('icons/love-green.svg') }}" alt="..." />
-            </div>
-          </div>
-
         </div>
+    </section>
+    <script>
+        const btnSpeak = document.getElementById('btn-speak');
+        const textToSpeak = `{!! strip_tags($data->description) !!}`;
 
-        <div class="mx-1">
-          <p class="fw-normal text-wrap detail-text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur adipisci laboriosam temporibus delectus aliquam! Maiores hic earum porro consequuntur natus aliquam aut adipisci doloribus ut, deleniti accusantium molestias dolorum nobis tenetur sunt eveniet corrupti libero laudantium quidem ex nostrum eum enim. Architecto rerum voluptatum provident hic saepe recusandae fuga laboriosam odit quisquam, nihil possimus esse similique accusantium, porro sunt voluptatem corporis assumenda repellat, ea dolorem. Incidunt totam quaerat eveniet, quos nulla unde fuga sapiente dolore, cupiditate quam ex iure nesciunt officia delectus nihil iste error dolor eos, vel quidem eum dignissimos! Beatae ex reiciendis assumenda eaque alias voluptas saepe aliquam?
-          </p>
-        </div>
-      </div>
-    </div>
+        btnSpeak.addEventListener('click', (el) => {
+            const utterance = new SpeechSynthesisUtterance(textToSpeak);
+            const img = document.getElementById('img-speak');
+            utterance.lang = 'id-ID'; // Set the language to Indonesian
 
-  </section>
-
-
-
+            if (speechSynthesis.speaking) {
+                speechSynthesis.cancel(); // Stop any ongoing speech
+                img.src = "{{ URL('icons/sound-green.svg') }}";
+            } else {
+                speechSynthesis.speak(utterance);
+                img.src = "{{ URL('icons/sound-green-muted.svg') }}";
+            }
+        });
+    </script>
 </x-layout>
