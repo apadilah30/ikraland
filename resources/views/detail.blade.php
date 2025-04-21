@@ -15,18 +15,17 @@
                 <div class="col-12 z-1 bg-white-cust pt-3 px-4 border rounded-5 rounded-bottom-0 pb-5">
                     <div class="d-flex align-items-center justify-content-between gap-5 mb-4 pt-4">
 
-                        <h1 class="fw-bold fs-3">
+                        <h1 class="fw-bold fs-3 mb-0">
                             {{ $data->name }}
                         </h1>
-                        <div class="d-flex">
-                            <button class="btn muted" id="btn-speak">
-                                <img id="img-speak" src="{{ URL('icons/sound-green.svg') }}" alt="..."/>
-                            </button>
-                            <button class="btn">
+                        <div class="d-flex align-items-center gap-4">
+                            <div>
+                                <img src="{{ URL('icons/sound-green-muted.svg') }}" alt="..." />
+                            </div>
+                            <div>
                                 <img src="{{ URL('icons/love-green.svg') }}" alt="..." />
-                            </button>
+                            </div>
                         </div>
-
                     </div>
 
                     <div class="mx-1 mb-5 fw-normal text-wrap detail-text fs-6 pb-5">
