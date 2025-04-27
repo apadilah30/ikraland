@@ -244,6 +244,7 @@ class PlantController extends Controller
         $data = Plant::with('category')->findOrFail($id);
         $qr_code = QrCode::format('png')
             ->size(1000)
+            ->margin(2)
             ->generate($data->slug);
 
         return response($qr_code)->header('Content-Type', 'image/png');
